@@ -1,3 +1,7 @@
+const fooButton = document.querySelector(".fooButton");
+fooButton.addEventListener("click", () => {
+  foo();
+});
 const foo = () => {
   const item = document.querySelectorAll(".item");
   // console.log(item);
