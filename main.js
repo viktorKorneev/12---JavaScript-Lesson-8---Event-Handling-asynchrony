@@ -1,8 +1,22 @@
 const item = document.querySelectorAll(".item")
+// console.log(item);
 
-
-for(let i = 0; i < item.length; i++){
-item[i].addEventListener("click", () =>{
-    item[i].classList.toggle("done")
+const newArr = [...item]
+newArr.map(el=> {
+    //debugger
+    return (
+        el.addEventListener("click", ()=> {
+            el.classList.toggle("done")
+        })
+    )
 })
-}
+
+
+
+// for(let i = 0; i < item.length; i++){
+// item[i].addEventListener("click", () =>{
+//     item[i].classList.toggle("done")
+// })
+// }
+
+
