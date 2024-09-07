@@ -8,13 +8,31 @@ const newArr = [...item];
 const list = document.querySelector(".list");
 const resetButton = document.querySelector("#reset-button");
 
+let timeoutId = null; // Хранение идентификатора таймера
+let isTimeStarted = false; // Флаг, укзывающий на то, запущен ли таймер
+
 resetButton.addEventListener("click", () => {
-  setTimeout(() => {
-    const items = document.querySelectorAll(".item");
-    for (let i = 0; i < items.length; i++) {
-      items[i].classList.remove("done");
-    }
-  }, 300);
+  if (!isTimeStarted) {
+    isTimeStarted = true;
+    resetButton.textContent = "Отмена";
+    timeoutId = setTimeout(() => {
+      // newArr.forEach((el) => {
+      //     return (
+      //         el.classList.remove("done")
+      //     )
+      // })
+      // const items = document.querySelectorAll(".item");
+      for (let i = 0; i < item.length; i++) {
+        item[i].classList.remove("done");
+      }
+      resetButton.textContent = "Сброс";
+      isTimeStarted = false;
+    }, 3000);
+  } else {
+    clearTimeout(timeoutId);
+    resetButton.textContent = "Сброс";
+    isTimeStarted = false;
+  }
 });
 
 list.addEventListener("click", (event) => {
