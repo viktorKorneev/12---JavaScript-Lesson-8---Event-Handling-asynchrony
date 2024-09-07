@@ -3,19 +3,26 @@ fooButton.addEventListener("click", () => {
   foo();
 });
 // const foo = () => {
-    const item = document.querySelectorAll(".item");
-    const newArr = [...item];
-    const list = document.querySelector(".list");
-  
+const item = document.querySelectorAll(".item");
+const newArr = [...item];
+const list = document.querySelector(".list");
+const resetButton = document.querySelector("#reset-button");
 
-  
-  list.addEventListener("click", (event) => {
-    const targetElement = event.target
-    if(targetElement.classList.contains("item")){
-        targetElement.classList.toggle("done")
+resetButton.addEventListener("click", () => {
+  setTimeout(() => {
+    const items = document.querySelectorAll(".item");
+    for (let i = 0; i < items.length; i++) {
+      items[i].classList.remove("done");
     }
+  }, 300);
+});
 
-  })
+list.addEventListener("click", (event) => {
+  const targetElement = event.target;
+  if (targetElement.classList.contains("item")) {
+    targetElement.classList.toggle("done");
+  }
+});
 
 //   newArr.forEach((el) => {
 //     //debugger
@@ -24,11 +31,11 @@ fooButton.addEventListener("click", () => {
 //     });
 //   });
 
-  // for(let i = 0; i < item.length; i++){
-  // item[i].addEventListener("click", () =>{
-  //     item[i].classList.toggle("done")
-  // })
-  // }
+// for(let i = 0; i < item.length; i++){
+// item[i].addEventListener("click", () =>{
+//     item[i].classList.toggle("done")
+// })
+// }
 // };
 
 const form = document.querySelector(".form");
