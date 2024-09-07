@@ -2,28 +2,34 @@ const fooButton = document.querySelector(".fooButton");
 fooButton.addEventListener("click", () => {
   foo();
 });
-const foo = () => {
-  const item = document.querySelectorAll(".item");
-
-  const newArr = [...item];
-
-  newArr.forEach((el) => {
-    //debugger
-    return (el.addEventListener("click", () => {
-      el.classList.toggle("done");
-    })
-    )
-  })
+// const foo = () => {
+    const item = document.querySelectorAll(".item");
+    const newArr = [...item];
+    const list = document.querySelector(".list");
   
+
+  
+  list.addEventListener("click", (event) => {
+    const targetElement = event.target
+    if(targetElement.classList.contains("item")){
+        targetElement.classList.toggle("done")
+    }
+
+  })
+
+//   newArr.forEach((el) => {
+//     //debugger
+//     return el.addEventListener("click", () => {
+//       el.classList.toggle("done");
+//     });
+//   });
 
   // for(let i = 0; i < item.length; i++){
   // item[i].addEventListener("click", () =>{
   //     item[i].classList.toggle("done")
   // })
   // }
-};
-
-foo()
+// };
 
 const form = document.querySelector(".form");
 form.addEventListener("submit", (event) => {
@@ -32,20 +38,10 @@ form.addEventListener("submit", (event) => {
   let text = input.value;
 
   const list = document.querySelector(".list");
-  const newLi = document.createElement("li")
-  newLi.classList.add("item")
-  newLi.textContent = text
-  list.append(newLi)
-foo()
-//   const newTable = document.createElement("table");
-//   const newTr = document.createElement("tr");
-//   const newTd = document.createElement("td");
-
-//   newTd.textContent = text;
-//   newTr.append(newTd);
-//   newTable.append(newTr);
-//   list.append(newTable);
-
+  const newLi = document.createElement("li");
+  newLi.classList.add("item");
+  newLi.textContent = text;
+  list.append(newLi);
   input.value = "";
 });
 // ---------------------------------------------------------------------------
@@ -95,3 +91,12 @@ foo()
 
 //     input.value = ""
 // })
+
+//   const newTable = document.createElement("table");
+//   const newTr = document.createElement("tr");
+//   const newTd = document.createElement("td");
+
+//   newTd.textContent = text;
+//   newTr.append(newTd);
+//   newTable.append(newTr);
+//   list.append(newTable);
