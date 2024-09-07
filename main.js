@@ -24,6 +24,12 @@
 const form = document.querySelector(".form")
 form.addEventListener("submit", (event) => {
     event.preventDefault()
-    console.log(event);
+    const input = document.querySelector(".input")
+    const text = input.value
     
+    const list = document.querySelector(".list")
+    const newLi = document.createElement("li")
+    newLi.classList.add(".item")
+    newLi.textContent = text
+    list.append(newLi)
 })
