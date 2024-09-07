@@ -1,8 +1,8 @@
-const fooButton = document.querySelector(".fooButton");
-fooButton.addEventListener("click", () => {
-  foo();
-});
-const foo = () => {
+// const fooButton = document.querySelector(".fooButton");
+// fooButton.addEventListener("click", () => {
+//   foo();
+// });
+// const foo = () => {
   const item = document.querySelectorAll(".item");
   // console.log(item);
 
@@ -14,10 +14,16 @@ const foo = () => {
       el.classList.toggle("done");
     });
   });
-};
+// };
 
 // for(let i = 0; i < item.length; i++){
 // item[i].addEventListener("click", () =>{
 //     item[i].classList.toggle("done")
 // })
 // }
+const form = document.querySelector(".form")
+form.addEventListener("submit", (event) => {
+    event.preventDefault()
+    console.log(event);
+    
+})
