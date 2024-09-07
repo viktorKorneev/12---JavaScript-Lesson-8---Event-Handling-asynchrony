@@ -1,2 +1,8 @@
-const item = document.querySelector(".item")
-console.log(item);
+const item = document.querySelectorAll(".item")
+
+
+for(let i = 0; i < item.length; i++){
+item[i].addEventListener("click", () =>{
+    item[i].classList.toggle("done")
+})
+}
