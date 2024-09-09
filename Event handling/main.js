@@ -2,4 +2,8 @@
 //   alert("I'm alive!");
 // }
 
-// window.onload = pageLoadedHandler;
+window.onload = init;
+function init(){
+    let image = document.getElementById("zero");
+}
+
