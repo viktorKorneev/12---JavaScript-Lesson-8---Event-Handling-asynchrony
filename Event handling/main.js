@@ -1,5 +1,5 @@
-function pageLoadedHandler() {
-  alert("I'm alive!");
-}
+// function pageLoadedHandler() {
+//   alert("I'm alive!");
+// }
 
-window.onload = pageLoadedHandler;
+// window.onload = pageLoadedHandler;
