@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pirates Booty</title>
     <script>
-        window.onload = init;
-        function init () {
-            let map = document.getElementById("map");
-            map.onmousemove = showCoords
-        }
+      window.onload = init;
+      function init() {
+        let map = document.getElementById("map");
+        map.onmousemove = showCoords;
+      }
 
-        function showCoords (eventObj) {
-            let map = document.getElementById("coords");
-            let x = eventObj.clientX;
-            let y = eventObj.clientY;
-            map.innerHTML = "Map coordinates: " + x + ", " + y;
+      function showCoords(eventObj) {
+        let map = document.getElementById("coords");
+        let x = eventObj.clientX;
+        let y = eventObj.clientY;
+        map.innerHTML = "Map coordinates: " + x + ", " + y;
+      }
 
-        }
+      // function timerHandler () {
+      //     alert ("Hey what are you doing just sitting there staring at a blank screen?")
+      // }
+      // setTimeout(timerHandler, 5000);
 
-        function timerHandler () {
-            alert ("Hey what are you doing just sitting there staring at a blank screen?")
+      let tick = true;
+      function ticker() {
+        if (tick) {
+          console.log("Tick");
+          tick = false;
+        } else {
+          console.log("Tock");
+          tick = true;
         }
-        setTimeout(timerHandler, 5000);
+      }
+      setInterval(ticker, 1000);
     </script>
-</head>
-<body>
-    <img id="map" src="map.jpg" alt="photo">
+  </head>
+  <body>
+    <img id="map" src="map.jpg" alt="photo" />
     <p id="coords">Move mouse to find coordinates...</p>
-</body>
+  </body>
 </html>
